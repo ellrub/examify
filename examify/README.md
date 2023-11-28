@@ -7,7 +7,11 @@
     - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
     - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-    | Condition | Feedback |
+
+
+    
+
+| Condition | Feedback |
 |-----------|----------|
 |Passed | Hi @  Congratulations on your hard work and dedication. Your Voyage 47 Solo Project has been accepted and you are advancing to the Voyage Phase starting on January 8th. Watch the <#1026584387569078373> channel for more information. <br/><br/> ```**_If you haven't yet signed up for Voyage 47 complete this form so you don't miss out _** ``` —> https://forms.gle/DajSfXQCX4qbMAu8A <br/><br/>I’m looking forward to seeing what you and your team will be creating in your Voyage! <br/><br/>https://c.tenor.com/bDxOr4tSm7kAAAAC/spongebob-high-five.gif <br/><br/>Here is some more specific feedback which I hope will be helpful: </br> |
 | Requested changes | Hi @  Your app shows that you’ve invested a considerable amount of thought and effort in its design & implementation. <br/><br/>Please make the following change and then open a ticket in <#1105911757177888908> when you are ready for me to look at it again. ``` **_This is the only change you are required to make._** ``` <br/><br/> ```__**Requested changes**__``` <br/> 1. ... <br/><br/>```**__Here’s additional feedback that I hope will be helpful__**```. |
