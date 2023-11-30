@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import questions from '../questions.json';
+import ReactMarkdown from "react-markdown";
 
 function Exam({ setUserAnswers }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -55,7 +56,7 @@ function Exam({ setUserAnswers }) {
     <div className="flex flex-col items-center justify-center text-black min-h-screen px-4 sm:px-8 md:px-16 text-lg sm:text-xl md:text-2xl">
       <div className="w-full max-w-screen-md mx-auto">
         <p className="text-sm sm:text-base md:text-lg mb-2">Spørsmål {currentQuestion + 1} av {shuffledQuestions.length}</p>
-        <h2 className="font-bold mb-4">{currentQuestionData.question}</h2>
+        <ReactMarkdown className="font-bold mb-4">{currentQuestionData.question}</ReactMarkdown>
       </div>
       <div className="flex justify-center mt-4">
         <div className="space-y-2 text-left">
@@ -69,7 +70,7 @@ function Exam({ setUserAnswers }) {
                 onChange={() => handleAnswer(option)}
                 className="mr-2"
               />
-              {option}
+              <ReactMarkdown className="ml-2">{option}</ReactMarkdown>
             </label>
           ))}
         </div>
