@@ -1,6 +1,6 @@
 [
     {
-        "question": "I programsetningen print('Hallo', 'verden', end='!') er det mest rikitg å kalle print()",
+        "question": "I programsetningen  \n*print('Hallo', 'verden', end='!')*,  \nhva er det mest rikitg å kalle print()",
         "options": [
             "En prosedyre",
             "En variabel",
@@ -80,7 +80,7 @@
         "answer": "2"
     },
     {
-        "question": "Hvilken type returneres av programsetningen input('Hva er din kroppsvekt: ')",
+        "question": "Hvilken type returneres av programsetningen:  \ninput('Hva er din kroppsvekt: ')",
         "options": [
             "str",
             "Det kommer an på brukeren",
@@ -110,7 +110,7 @@
         "answer": "PEMDAS > sammenligninger > logiske operatorer"
     },
     {
-        "question": "Hvordan blir uttrykket utført? 2**3+8/4*2-9+11*4",
+        "question": "Hvordan blir uttrykket utført?  \n2**3+8/4*2-9+11*4",
         "options": [
             "(((2**3)+((8/4)*2))-9)+(11*4)",
             "(2**3)+((8/(4*2))-((9+11)*4))",
@@ -120,7 +120,7 @@
         "answer": "(((2**3)+((8/4)*2))-9)+(11*4)"
     },
     {
-        "question": "Hva slags programsetning eller -uttrykk er brukt her: x-y if x > y else 0",
+        "question": "Hva slags programsetning eller -uttrykk er brukt her:  \nx-y if x > y else 0",
         "options": [
             "Betinget uttrykk ('conditional expression')",
             "Unntak",
@@ -130,7 +130,7 @@
         "answer": "Betinget uttrykk ('conditional expression')"
     },
     {
-        "question": "Hva slags programsetning eller -uttrykk er brukt her: \nif x < 0:\n    print('Tallet er for lite')\nelif x > 10:\n    print('Tallet er for stort')\nelse:\n    print('Tallet er ok')",
+        "question": "Hva slags programsetning eller -uttrykk er brukt her:  \n```\nif x < 0:  \n  print('Tallet er for lite')  \nelif x > 10:  \n  print('Tallet er for stort')  \nelse:  \n  print('Tallet er ok')",
         "options": [
             "Betinget alternativ utførelse ('chained conditional')",
             "Unntak",
@@ -140,7 +140,7 @@
         "answer": "Betinget alternativ utførelse ('chained conditional')"
     },
     {
-        "question": "Hva slags programmeringsteknikk er brukt her:\nif stasjon in målinger and 'Torg' in målinger[stasjon]:\n    ...",
+        "question": "Hva slags programmeringsteknikk er brukt her:  \nif stasjon in målinger and 'Torg' in målinger[stasjon]:  \n...",
         "options": [
             "Avkortet evaluering ('short-circuit evaluation')",
             "Unntak",
@@ -160,7 +160,7 @@
         "answer": "variabelverdier"
     },
     {
-        "question": "I programlinjen: def skriv_persondata(p, lengde='cm', vekt='kg'):\nHva er p?",
+        "question": "I programlinjen:  \ndef skriv_persondata(p, lengde='cm', vekt='kg')  \nHva er p?",
         "options": [
             "En parameter",
             "Et argument",
@@ -170,7 +170,7 @@
         "answer": "En parameter"
     },
     {
-        "question": "I programlinjen: def skriv_persondata(p, lengde='cm', vekt='kg'):\nHva er kg?",
+        "question": "I programlinjen:  \ndef skriv_persondata(p, lengde='cm', vekt='kg')  \nHva er kg?",
         "options": [
             "En standardverdi",
             "En parameter",
@@ -190,7 +190,7 @@
         "answer": "Vi skal bruke x i nærmeste omsluttende skop"
     },
     {
-        "question": "for i in range(1, 6, 2):\n    if i%2 == 1:\n        print(i**2, end='') ",
+        "question": "```\nfor i in range(1, 6, 2):  \n  if i%2 == 1:  \n    print(i**2, end='') ",
         "options": [
             "1 9 25",
             "1",
@@ -350,7 +350,7 @@
         "answer": "'mmr'"
     },
     {
-        "question": "'xxx % .4f yyy' % 2.71828\nog\nf'xxx {2.71828:.5} yyy'\nGir den samme tegnstrenger",
+        "question": "'xxx % .4f yyy' % 2.71828  \nog  \nf'xxx {2.71828:.5} yyy'  \nGir den samme tegnstrengen",
         "options": [
             "'xxx 2.7183 yyy'",
             "'xxx 2.718 yyy'",
@@ -380,7 +380,7 @@
         "answer": "Hvis filen ikke finnes blir den opprettet"
     },
     {
-        "question": "Anta at fil er åpnet for lesing. Hva skriver ut her?\ni = 0\nfor x in fil.read():\n    i += 1\nprint(i)",
+        "question": "Anta at fil er åpnet for lesing. Hva skriver ut her?  \n```\ni = 0  \nfor x in fil.read():  \n  i += 1  \nprint(i)",
         "options": [
             "Skriver ut antall tegn i fil",
             "Skriver ut antall linjer i fil",
@@ -558,5 +558,45 @@
             "['A1', 'B1', 'C1', 'A2', 'B2', 'C2', 'A3', 'B3', 'C3']"
         ],
         "answer": "[['A1', 'A2', 'A3'], ['B1', 'B2', 'B3'], ['C1', 'C2', 'C3']]"
+    },
+    {
+        "question": "x is y vil si at x og y er",
+        "options": [
+            "identiske men ikke nødvendigvis ekvivalente",
+            "ekvivalente og ikke identiske",
+            "ekvivalente og identiske",
+            "ekvivalente men ikke nødvendigvis identiske"
+        ],
+        "answer": "ekvivalente og identiske"
+    },
+    {
+        "question": "l1 = ['løping', 'spinning', 'styrke']  \nl2 = l1[:]  \nNå er l1 og l2",
+        "options": [
+            "Både ekvivalente og identiske",
+            "Hverken ekvivalente eller identiske",
+            "Ekvivalente, men aldri identiske",
+            "Ekvivalente, men neppe identiske"
+        ],
+        "answer": "Ekvivalente, men aldri identiske"
+    },
+    {
+        "question": "len(['løping', 'spinning', 'styrke'])  \nog  \n9//3 er",
+        "options": [
+            "Hverken ekvivalente eller identiske",
+            "Ekvivalente, men aldri identiske",
+            "Ekvivalente og kanskje identiske",
+            "Identiske, men ikke ekvivalente"
+        ],
+        "answer": "Ekvivalente og kanskje identiske"
+    },
+    {
+        "question": "Når vi endrer verdien til en funksjonsparameter i kroppen til en funksjon, endres også den overførte argumentverdien?",
+        "options": [
+            "Ja, hvis argumentet har globalt skop",
+            "Ja, uansett",
+            "Ja, men ikke hvis endringen skjer ved tilordning til parametervariabelen",
+            "Nei, aldri"
+        ],
+        "answer": "Ja, men ikke hvis endringen skjer ved tilordning til parametervariabelen"
     }
 ]
