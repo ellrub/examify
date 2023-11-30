@@ -73,22 +73,22 @@ export default function Options() {
             <h1 className='main__heading'>Eksamen</h1>
             <div className='main__cards cards'>
                 <div className='cards__inner'>
-                    {/* <div className='cards__card card'>
-                        <h2 className='card__heading'>Introduksjon til Informasjonsvitenskap</h2>
-                        <p className='card_price'>Info100</p>
+                    <div className='cards__card card'>
+                        <h2 className='card__heading'>Introduksjon til Programmering</h2>
+                        <p className='card_price'>Info132 - Høst 2021</p>
                         <ul role='list' className='card__bullets flow'>
-                            <li>Hele pensum</li>
+                            <li className='text-red-500 font-bold text-xl'>KOMMER</li>
                             <li>60 Spørsmål</li>
                         </ul>
                         <a href="#" className='card__cta cta'>Start</a>
-                    </div> */}
+                    </div>
 
                     <div className='cards__card card'>
                         <h2 className='card__heading'>Introduksjon til Programmering</h2>
-                        <p className='card_price'>Info132</p>
+                        <p className='card_price'>Info132 - Høst 2020</p>
                         <ul role='list' className='card__bullets flow'>
-                            <li>Hele pensum</li>
-                            <li>56 Spørsmål</li>
+                            
+                            <li>60 Spørsmål</li>
                         </ul>
                         <a onClick={startExam} href="#" className='card__cta cta'>Start</a>
                     </div>
