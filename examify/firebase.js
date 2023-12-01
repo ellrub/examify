@@ -18,10 +18,12 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 // Initialize Firestore
-const db = getFirestore();
+const db = getFirestore(app);
 
 // Function to fetch exams
 export async function getExams() {
   const querySnapshot = await getDocs(collection(db, 'info132h20'));
   return querySnapshot.docs.map((doc) => doc.data());
 }
+
+export { db };
