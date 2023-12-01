@@ -57,7 +57,7 @@ export default function Options() {
   };
   return (
     <>
-        <main className='main flow'>
+        <main className='max-w-[75rem] p-[3em]'>
         <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true"
@@ -70,31 +70,31 @@ export default function Options() {
               }}
             />
           </div>
-            <h1 className='main__heading'>Eksamen</h1>
-            <div className='main__cards cards'>
-                <div className='cards__inner'>
-                    <div className='cards__card card'>
-                        <h2 className='card__heading'>Introduksjon til Programmering</h2>
-                        <p className='card_price'>Info132 - Høst 2021</p>
-                        <ul role='list' className='card__bullets flow'>
-                            <li className='text-red-500 font-bold text-xl'>KOMMER</li>
-                            <li>60 Spørsmål</li>
+            <h1 className='font-semibold text-4xl mb-3 text-center text-gray-800'>Eksamen</h1>
+            <div className='cards'>
+                <div className='flex flex-wrap gap-10'>
+                    {/* <div className='card'>
+                        <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
+                        <p className='text-lg'>Info132 - Høst 2021</p>
+                        <ul role='list' className='card__bullets'>
+                            <li className='text-red-500 font-bold text-xl leading-8'>KOMMER</li>
+                            <li className='leading-8'>60 Spørsmål</li>
                         </ul>
-                        <a href="#" className='card__cta cta'>Start</a>
-                    </div>
+                        <a href="#" className='cta'>Start</a>
+                    </div> */}
 
-                    <div className='cards__card card'>
-                        <h2 className='card__heading'>Introduksjon til Programmering</h2>
-                        <p className='card_price'>Info132 - Høst 2020</p>
-                        <ul role='list' className='card__bullets flow'>
+                    <div className='card'>
+                        <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
+                        <p className='text-lg'>Info132 - Høst 2020</p>
+                        <ul role='list' className='card__bullets'>
                             
-                            <li>60 Spørsmål</li>
+                            <li className='leading-8'>60 Spørsmål</li>
                         </ul>
-                        <a onClick={startExam} href="#" className='card__cta cta'>Start</a>
+                        <a onClick={startExam} href="#" className='cta'>Start</a>
                     </div>
 
                 </div>
-                <div className='overlay cards__inner'></div>
+                <div className='overlay flex flex-wrap gap-10' />
             </div>
             <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
