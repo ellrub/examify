@@ -1,7 +1,25 @@
-import React from 'react';
-import questions from '../questions.json';
+import React, { useState, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase.js'; // replace with the path to your Firebase config
 
 function Result({ userAnswers }) {
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const querySnapshot = await getDocs(collection(db, 'info132h20'));
+      setQuestions(querySnapshot.docs.map(doc => doc.data()));
+      setLoading(false);
+    };
+
+    fetchQuestions();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   const score = userAnswers.filter((answer, index) => answer === questions[index].answer).length;
 
   return (
