@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
 import { getExams } from '../../firebase.js';
 
+import "../App.css"
+
 function Exam({ setUserAnswers }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -56,7 +58,7 @@ function Exam({ setUserAnswers }) {
   const currentExamData = shuffledExams[currentQuestion];
 
   if (!currentExamData) {
-    return null; // or some loading indicator
+    return <div className='loader'></div>
   }
 
   return (
