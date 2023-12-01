@@ -83,13 +83,13 @@ function Exam({ setUserAnswers }) {
         </div>
       </div>
       <div className="flex space-x-4 mt-10">
-        <button onClick={prevQuestion} disabled={currentQuestion === 0} className="py-2 px-4 rounded-lg bg-gray-500 text-white text-lg">Previous</button>
+        <button onClick={prevQuestion} disabled={currentQuestion === 0} className="py-2 px-4 rounded-lg bg-gray-500 text-white text-lg">Tilbake</button>
         <button 
           onClick={nextQuestion} 
           disabled={answers[currentQuestion] === null}
           className='py-2 px-4 rounded-lg bg-blue-500 text-white text-lg'
         >
-          Next
+          Neste
         </button>
       </div>
     </div>
