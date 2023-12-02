@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase.js'; // replace with the path to your Firebase config
+
+import { db } from '../../firebase.js';
+import "../App.css"
 
 function Result({ userAnswers }) {
   const [questions, setQuestions] = useState([]);
@@ -17,7 +19,7 @@ function Result({ userAnswers }) {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='loader'></div>
   }
 
   const score = userAnswers.filter((answer, index) => answer === questions[index].answer).length;
