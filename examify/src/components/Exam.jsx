@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
 import { getExams } from '../../firebase.js';
+import { useParams } from 'react-router-dom';
 
 import "../App.css"
 
@@ -10,6 +11,7 @@ function Exam({ setUserAnswers }) {
   const [answers, setAnswers] = useState([]);
   const [exams, setExams] = useState([])
   const navigate = useNavigate();
+  const { examId } = useParams();
 
   const handleAnswer = (option) => {
     const newAnswers = [...answers];
@@ -44,16 +46,16 @@ function Exam({ setUserAnswers }) {
 
   // Fetch exams from Firestore and shuffle the questions when the component mounts
   useEffect(() => {
-    getExams().then((fetchedExams) => {
+    getExams(examId).then((fetchedExams) => {
       console.log(fetchedExams);
       setExams(fetchedExams);
       setAnswers(Array(fetchedExams.length).fill(null));
-
+  
       const shuffledExams = [...fetchedExams];
       shuffledExams.forEach(exam => shuffleArray(exam.options));
       setShuffledExams(shuffledExams);
     });
-  }, []);
+  }, [examId]);
 
   const currentExamData = shuffledExams[currentQuestion];
 

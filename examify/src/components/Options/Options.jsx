@@ -52,8 +52,8 @@ export default function Options() {
   })
   const navigate = useNavigate();
 
-  const startExam = () => {
-    navigate('/exam');
+  const startExam = (examId) => {
+    navigate(`/exam/${examId}`);
   };
   return (
     <>
@@ -73,15 +73,15 @@ export default function Options() {
             <h1 className='font-semibold text-4xl mb-3 text-center text-gray-800'>Eksamen</h1>
             <div className='cards'>
                 <div className='flex flex-wrap gap-10'>
-                    {/* <div className='card'>
+                    <div className='card'>
                         <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
                         <p className='text-lg'>Info132 - Høst 2021</p>
                         <ul role='list' className='card__bullets'>
                             <li className='text-red-500 font-bold text-xl leading-8'>KOMMER</li>
                             <li className='leading-8'>60 Spørsmål</li>
                         </ul>
-                        <a href="#" className='cta'>Start</a>
-                    </div> */}
+                        <a onClick={() => startExam('info132h21')} href="#" className='cta'>Start</a>
+                    </div>
 
                     <div className='card'>
                         <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
@@ -90,7 +90,7 @@ export default function Options() {
                             
                             <li className='leading-8'>60 Spørsmål</li>
                         </ul>
-                        <a onClick={startExam} href="#" className='cta'>Start</a>
+                        <a onClick={() => startExam('info132h20')} href="#" className='cta'>Start</a>
                     </div>
 
                 </div>
