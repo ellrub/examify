@@ -7,12 +7,14 @@ function Result({ userAnswers }) {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const { examId } = useParams();
+  console.log("examId:", examId);
 
   useEffect(() => {
     const fetchExams = async () => {
-      const fetchedExams = await getExams();
-      const exam = fetchedExams.find(e => e.id === examId);
-      setQuestions(exam.questions);
+      console.log("Fetching exams with examId:", examId)
+      const fetchedQuestions = await getExams(examId);
+      console.log("fetchedQuestions:", fetchedQuestions)
+      setQuestions(fetchedQuestions);
       setLoading(false);
     };
 
@@ -28,7 +30,12 @@ function Result({ userAnswers }) {
   const sortedQuestions = [...questions].sort((a, b) => a.id - b.id);
 
   // Calculate score
-  const score = sortedUserAnswers.filter((answer, index) => answer.answer === sortedQuestions[index].answer).length;
+  // Calculate score
+  const score = sortedUserAnswers.filter((answer, index) => {
+    console.log("User's answer:", answer.answer);
+    console.log("Correct answer:", sortedQuestions[index].answer);
+    return answer.answer === sortedQuestions[index].answer;
+  }).length;
 
   return (
     <div className="flex flex-col items-center text-black">

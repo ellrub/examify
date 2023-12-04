@@ -15,7 +15,7 @@ function Exam({ setUserAnswers }) {
 
   const handleAnswer = (option) => {
     const newAnswers = [...answers];
-    newAnswers[currentQuestion] = option;
+    newAnswers[currentQuestion] = { questionId: exams[currentQuestion].id, answer: option };
     setAnswers(newAnswers);
   };
 
@@ -24,7 +24,7 @@ function Exam({ setUserAnswers }) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setUserAnswers(answers);
-      navigate('/result');
+      navigate(`/result/${examId}`);
     }
   };
 

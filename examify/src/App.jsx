@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/options" element={<Options />} />
-        <Route path="/result" element={<Result userAnswers={userAnswers} />} />
+        <Route path="/result/:examId" element={<Result userAnswers={userAnswers} />} />
         <Route path="/exam/:examId" element={<Exam setUserAnswers={setUserAnswers} />} />
       </Routes>
     </Router>

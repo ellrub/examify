@@ -74,6 +74,15 @@ export default function Options() {
             <div className='cards'>
                 <div className='flex flex-wrap gap-10'>
                     <div className='card'>
+                        <h2 className='text-lg font-semibold'>For testing</h2>
+                        <p className='text-lg'>For testing</p>
+                        <ul role='list' className='card__bullets'>
+                            <li className='text-red-500 font-bold text-xl leading-8'>TESTING</li>
+                            <li className='leading-8'>3 Questions</li>
+                        </ul>
+                        <a onClick={() => startExam('tester')} href="#" className='cta'>Start</a>
+                    </div>
+                    <div className='card'>
                         <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
                         <p className='text-lg'>Info132 - Høst 2021</p>
                         <ul role='list' className='card__bullets'>
