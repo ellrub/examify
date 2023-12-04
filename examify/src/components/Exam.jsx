@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
-import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { getExams } from '../../firebase.js';
 import { useParams } from 'react-router-dom';
 
 import "../App.css"
+
+// SyntaxHighligther styling
+const customStyle = {
+  backgroundColor: '#2b2b2b',
+  borderRadius: '0.5em',
+  overflowX: 'hidden',
+  fontFamily: 'Fira Code, monospace',
+  fontSize: '1rem',
+};
 
 function Exam({ setUserAnswers }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -67,7 +77,9 @@ function Exam({ setUserAnswers }) {
     <div className="flex flex-col items-center justify-center text-indigo-50 min-h-screen px-4 sm:px-8 md:px-16 text-lg sm:text-xl md:text-2xl">
       <div className="w-full max-w-screen-md mx-auto">
         <p className="text-sm sm:text-base md:text-lg mb-2">Spørsmål {currentQuestion + 1} av {shuffledExams.length}</p>
-        <ReactMarkdown className="font-bold mb-4">{currentExamData.question}</ReactMarkdown>
+        <div style={customStyle}>
+          <SyntaxHighlighter language="python" wrapLongLines={true} style={darcula}>{currentExamData.question}</SyntaxHighlighter>
+        </div>
       </div>
       <div className="flex justify-center mt-4 w-full max-w-screen-md mx-auto">
         <div className="space-y-2 text-left w-full">
@@ -77,7 +89,7 @@ function Exam({ setUserAnswers }) {
               onClick={() => handleAnswer(option)}
               className={`p-3 rounded-lg cursor-pointer text-xl border border-indigo-500 ${answers[currentQuestion]?.answer === option ? 'bg-indigo-700' : 'bg-indigo-900 hover:bg-indigo-700'}`}
             >
-              <ReactMarkdown className="ml-2">{option}</ReactMarkdown>
+              <p className="ml-2">{option}</p>
             </div>
           ))}
         </div>
