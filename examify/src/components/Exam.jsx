@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
 import { getExams } from '../../firebase.js';
+import { useParams } from 'react-router-dom';
 
 import "../App.css"
 
@@ -10,10 +11,11 @@ function Exam({ setUserAnswers }) {
   const [answers, setAnswers] = useState([]);
   const [exams, setExams] = useState([])
   const navigate = useNavigate();
+  const { examId } = useParams();
 
   const handleAnswer = (option) => {
     const newAnswers = [...answers];
-    newAnswers[currentQuestion] = option;
+    newAnswers[currentQuestion] = { questionId: exams[currentQuestion].id, answer: option };
     setAnswers(newAnswers);
   };
 
@@ -22,7 +24,7 @@ function Exam({ setUserAnswers }) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setUserAnswers(answers);
-      navigate('/result');
+      navigate(`/result/${examId}`);
     }
   };
 
@@ -44,16 +46,16 @@ function Exam({ setUserAnswers }) {
 
   // Fetch exams from Firestore and shuffle the questions when the component mounts
   useEffect(() => {
-    getExams().then((fetchedExams) => {
+    getExams(examId).then((fetchedExams) => {
       console.log(fetchedExams);
       setExams(fetchedExams);
       setAnswers(Array(fetchedExams.length).fill(null));
-
+  
       const shuffledExams = [...fetchedExams];
       shuffledExams.forEach(exam => shuffleArray(exam.options));
       setShuffledExams(shuffledExams);
     });
-  }, []);
+  }, [examId]);
 
   const currentExamData = shuffledExams[currentQuestion];
 
@@ -62,34 +64,30 @@ function Exam({ setUserAnswers }) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-black min-h-screen px-4 sm:px-8 md:px-16 text-lg sm:text-xl md:text-2xl">
+    <div className="flex flex-col items-center justify-center text-indigo-50 min-h-screen px-4 sm:px-8 md:px-16 text-lg sm:text-xl md:text-2xl">
       <div className="w-full max-w-screen-md mx-auto">
         <p className="text-sm sm:text-base md:text-lg mb-2">Spørsmål {currentQuestion + 1} av {shuffledExams.length}</p>
         <ReactMarkdown className="font-bold mb-4">{currentExamData.question}</ReactMarkdown>
       </div>
-      <div className="flex justify-center mt-4">
-        <div className="space-y-2 text-left">
+      <div className="flex justify-center mt-4 w-full max-w-screen-md mx-auto">
+        <div className="space-y-2 text-left w-full">
           {currentExamData.options.map((option, index) => (
-            <label key={index} className="flex items-center">
-              <input
-                type="radio"
-                name={`question-${currentQuestion}`}
-                value={option}
-                checked={answers[currentQuestion] === option}
-                onChange={() => handleAnswer(option)}
-                className="mr-2"
-              />
+            <div 
+              key={index} 
+              onClick={() => handleAnswer(option)}
+              className={`p-3 rounded-lg cursor-pointer text-xl border border-indigo-500 ${answers[currentQuestion]?.answer === option ? 'bg-indigo-700' : 'bg-indigo-900 hover:bg-indigo-700'}`}
+            >
               <ReactMarkdown className="ml-2">{option}</ReactMarkdown>
-            </label>
+            </div>
           ))}
         </div>
       </div>
       <div className="flex space-x-4 mt-10">
-        <button onClick={prevQuestion} disabled={currentQuestion === 0} className="py-2 px-4 rounded-lg bg-gray-500 text-white text-lg">Tilbake</button>
+        <button onClick={prevQuestion} disabled={currentQuestion === 0} className="tracking-wider rounded-md bg-violet-500 px-5 py-3 text-xl font-semibold text-indigo-50 shadow-sm hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-900">Tilbake</button>
         <button 
           onClick={nextQuestion} 
           disabled={answers[currentQuestion] === null}
-          className='py-2 px-4 rounded-lg bg-blue-500 text-white text-lg'
+          className='tracking-wider rounded-md bg-violet-500 px-5 py-3 text-xl font-semibold text-indigo-50 shadow-sm hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-900'
         >
           Neste
         </button>

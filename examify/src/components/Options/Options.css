@@ -53,6 +53,12 @@ ul {
   --lightness: 61.76%;
 }
 
+.card:nth-child(3) {
+  --hue: 70.50;
+  --saturation: 95.9%;
+  --lightness: 60.76%;
+}
+
 .card {
   --flow-space: 0.5em;
   --hsl: var(--hue), var(--saturation), var(--lightness);
@@ -62,8 +68,8 @@ ul {
   grid-template-rows: auto auto auto 1fr;
   align-items: start;
   gap: 1.25em;
-  color: #2b2b2b;
-  background-color: #eceff1;
+  color: #EEF2FF;
+  background-color: #312E81;
   border: 1px solid #eceff133;
   border-radius: 15px;
   box-shadow:
@@ -79,7 +85,7 @@ ul {
   margin: 1em 0 0.5em 0;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: #EEF2FF;
   background-color: #0d0d0d;
   padding: 0.7em;
   border-radius: 10px;
