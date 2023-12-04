@@ -38,16 +38,16 @@ function Result({ userAnswers }) {
   }).length;
 
   return (
-    <div className="flex flex-col items-center text-black">
-      <h1 className="text-2xl font-bold mt-10 mb-4">Antall rette: {score}/{questions.length}</h1>
+    <div className="flex flex-col items-center text-indigo-50">
+      <h1 className="text-2xl font-bold mt-10 mb-4 tracking-wider">Antall rette: {score}/{questions.length}</h1>
       {sortedQuestions.map((question, index) => (
-        <div key={index} className="mb-8 p-4 bg-white shadow-md rounded-lg w-full md:w-1/2">
+        <div key={index} className="mb-8 p-4 bg-indigo-900 shadow-md rounded-lg w-full md:w-1/2 border border-indigo-500">
           <p className="text-lg mb-2">{question.question}</p>
           <p className="mb-2"><span className="font-bold">Ditt svar:</span> {sortedUserAnswers[index].answer}</p>
           {sortedUserAnswers[index].answer !== question.answer && (
             <p className="mb-2"><span className="font-bold">Rett svar:</span> {question.answer}</p>
           )}
-          <p className={`font-bold ${sortedUserAnswers[index].answer === question.answer ? 'text-green-500' : 'text-red-500'}`}>
+          <p className={`font-bold tracking-wider ${sortedUserAnswers[index].answer === question.answer ? 'text-green-500' : 'text-red-500'}`}>
             {sortedUserAnswers[index].answer === question.answer ? 'Riktig' : 'Feil'}
           </p>
         </div>
