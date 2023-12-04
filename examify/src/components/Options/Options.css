@@ -53,6 +53,12 @@ ul {
   --lightness: 61.76%;
 }
 
+.card:nth-child(3) {
+  --hue: 70.50;
+  --saturation: 95.9%;
+  --lightness: 60.76%;
+}
+
 .card {
   --flow-space: 0.5em;
   --hsl: var(--hue), var(--saturation), var(--lightness);

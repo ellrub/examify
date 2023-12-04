@@ -21,9 +21,12 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 // Function to fetch exams
-export async function getExams() {
-  const querySnapshot = await getDocs(collection(db, 'info132h20'));
-  return querySnapshot.docs.map((doc) => doc.data());
-}
+export const getExams = async (collectionName) => {
+  console.log('Fetching exams from collection:', collectionName);
+  const examsCollection = collection(db, collectionName);
+  const snapshot = await getDocs(examsCollection);
+  const questions = snapshot.docs.map(doc => doc.data());
+  return questions;
+};
 
 export { db };
