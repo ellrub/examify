@@ -58,10 +58,10 @@ export default function Options() {
   return (
     <>
         <main className='max-w-[75rem] p-[3em]'>
-            <h1 className='txt_shadow font-semibold text-6xl mb-3 text-center text-indigo-50 tracking-wide'>Eksamen</h1>
+            <h1 className='font-semibold text-6xl mb-3 text-center text-indigo-50 tracking-wide'>Eksamen</h1>
             <div className='cards'>
                 <div className='flex flex-wrap gap-10'>
-                    <div className='card'>
+                    {/* <div className='card'>
                         <h2 className='text-lg font-semibold'>For testing</h2>
                         <p className='text-lg'>For testing</p>
                         <ul role='list' className='card__bullets'>
@@ -69,7 +69,7 @@ export default function Options() {
                             <li className='leading-8'>3 Questions</li>
                         </ul>
                         <a onClick={() => startExam('tester')} href="#" className='cta'>Start</a>
-                    </div>
+                    </div> */}
                     <div className='card'>
                         <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
                         <p className='text-lg'>Info132 - Høst 2021</p>
