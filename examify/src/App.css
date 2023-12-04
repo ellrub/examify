@@ -26,3 +26,7 @@
   html {
     background-color: #312E81;
   }
+
+  .txt_shadow {
+    text-shadow: 2px 2px black;
+  }
