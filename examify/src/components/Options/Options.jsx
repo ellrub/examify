@@ -58,7 +58,7 @@ export default function Options() {
   return (
     <>
         <main className='max-w-[75rem] p-[3em]'>
-            <h1 className='font-semibold text-6xl mb-3 text-center text-indigo-50 tracking-wide'>Eksamen</h1>
+            <h1 className='font-semibold text-6xl mb-10 text-center text-indigo-50 tracking-wide'>Eksamen</h1>
             <div className='cards'>
                 <div className='flex flex-wrap gap-10'>
                     {/* <div className='card'>

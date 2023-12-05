@@ -30,8 +30,8 @@ ul {
 .card__bullets li::before {
   display: inline-block;
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%231aab40'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
-  transform: translatey(0.25ch);
-  margin-right: 1ch;
+  transform: translatey(0.20rem);
+  margin-right: 0.6rem;
 }
 
 /* -------- [ DO NOT REMOVE THE CODE BELOW ] -------- */
@@ -49,7 +49,7 @@ ul {
 .card:nth-child(2) {
   --hue: 291.34;
   --saturation: 95.9%;
-  --lightness: 61.76%;
+  --lightness: 50.76%;
 }
 
 .card:nth-child(3) {
@@ -62,15 +62,17 @@ ul {
   --flow-space: 0.5em;
   --hsl: var(--hue), var(--saturation), var(--lightness);
   flex: 1 1 14rem;
-  padding: 1.5em 2em;
+  padding: 1.5rem 2rem;
   display: grid;
   grid-template-rows: auto auto auto 1fr;
   align-items: start;
-  gap: 1.25em;
+  gap: 1.25rem;
   color: #EEF2FF;
   background-color: #312E81;
   border: 1px solid #eceff133;
-  border-radius: 15px;
+  border-radius: 0.6rem;
+  text-shadow: 2px 2px black;
+  letter-spacing: 0.03rem;
   box-shadow:
     3.7px 2.4px 2.7px rgba(0, 0, 0, 0.028),
     9.4px 6.1px 6.9px rgba(0, 0, 0, 0.04),
@@ -81,15 +83,17 @@ ul {
 .cta {
   display: block;
   align-self: end;
-  margin: 1em 0 0.5em 0;
+  margin: 1rem 0 0.5rem 0;
   text-align: center;
   text-decoration: none;
   color: #EEF2FF;
-  background-color: #0d0d0d;
-  padding: 0.7em;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
+  background-color: #0d0d0dcf;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  z-index: 1;
 }
 
 .overlay {
@@ -123,7 +127,7 @@ ul {
   grid-row: -1;
   width: 100%;
   background-color: hsl(var(--hsl));
-  box-shadow: 0 0 0 1px hsl(var(--hsl));
+  box-shadow: 0 0 0 2px hsl(var(--hsl));
 }
 
 :not(.overlay) > .card {
@@ -132,7 +136,7 @@ ul {
 }
 
 :not(.overlay) > .card:hover {
-  --lightness: 95%;
+  --lightness: 50%;
   background: hsla(var(--hsl), 0.1);
 }
 
