@@ -21,7 +21,7 @@ function Home() {
                 Klar for eksamen? <br/>Test deg her!
               </h1>
               <p className="mt-6 text-lg leading-8 text-indigo-50 tracking-wider">
-                Test kunnskapen din med tidligere eksamensoppgaver, og se hva du må lese på.
+                Test kunnskapen din med tidligere eksamensoppgaver, og se hva du må lese mer på.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
