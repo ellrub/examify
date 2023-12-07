@@ -30,3 +30,7 @@
   .txt_shadow {
     text-shadow: 2px 2px black;
   }
+
+  .box_shadow {
+    box-shadow: 1.5px 1.5px 5px black;
+  }
