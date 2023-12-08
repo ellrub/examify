@@ -6,14 +6,11 @@ import "../App.css";
 function Home() {
   const navigate = useNavigate();
 
-  const goToOptions = () => {
+  const navigateOptions = () => {
     navigate('/options');
   };
 
     return (
-      <div>
-        <header className="absolute inset-x-0 top-0 z-50">
-        </header>
         <div className="relative isolate px-6 pt-14 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
@@ -25,9 +22,8 @@ function Home() {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="#"
                   className="tracking-wide rounded-md bg-violet-500 px-5 py-3 text-xl font-semibold text-indigo-50 shadow-sm hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-900"
-                  onClick={goToOptions}
+                  onClick={navigateOptions}
                 >
                   Start her
                 </a>
@@ -38,7 +34,6 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
     )
   }
 

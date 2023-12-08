@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { getExams } from '../../firebase.js';
 import { useParams } from 'react-router-dom';
 
+import { getExams } from '../../firebase.js';
 import "../App.css"
 
 // SyntaxHighligther styling
