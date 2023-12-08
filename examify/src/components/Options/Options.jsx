@@ -77,7 +77,7 @@ export default function Options() {
                             
                             <li className='leading-8'>60 Spørsmål</li>
                         </ul>
-                        <a onClick={() => startExam('info132h21')} href="#" className='cta'>Start</a>
+                        <a onClick={() => startExam('info132h21')} className='cta'>Start</a>
                     </div>
 
                     <div className='card'>
@@ -87,7 +87,7 @@ export default function Options() {
                             
                             <li className='leading-8'>60 Spørsmål</li>
                         </ul>
-                        <a onClick={() => startExam('info132h20')} href="#" className='cta'>Start</a>
+                        <a onClick={() => startExam('info132h20')} className='cta'>Start</a>
                     </div>
 
                 </div>
