@@ -61,7 +61,7 @@ function Result({ userAnswers }) {
             {sortedUserAnswers[index].answer === question.answer ? 'Riktig' : 'Feil'}
           </p>
           {question.explanation && (
-            <div className="text-center" onClick={() => setExplanationVisible(explanationVisible === index ? null : index)}>
+            <div className="text-center cursor-pointer" onClick={() => setExplanationVisible(explanationVisible === index ? null : index)}>
               Klikk her for forklaring
             </div>
           )}
