@@ -67,7 +67,7 @@ export default function Options() {
       <div className='cards'>
         <div className='flex flex-wrap gap-10'>
 
-          <div className='card'>
+          {/* <div className='card'>
               <h2 className='text-lg font-semibold'>For testing</h2>
               <p className='text-lg'>For testing</p>
               <ul role='list' className='card__bullets'>
@@ -75,12 +75,13 @@ export default function Options() {
                   <li className='leading-8'>3 Questions</li>
               </ul>
               <a onClick={() => startExam('tester')} href="#" className='cta'>Start</a>
-          </div>
+          </div> */}
 
           <div className='card'>
             <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
             <p className='text-lg'>Info132 - Høst 2021</p>
             <ul role='list' className='card__bullets'>  
+              <li className='leading-8'>Med forklaringer på slutten</li>
               <li className='leading-8'>60 Spørsmål</li>
             </ul>
             <a onClick={() => startExam('info132h21')} className='cta'>Start</a>
