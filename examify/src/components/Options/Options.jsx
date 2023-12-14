@@ -81,6 +81,7 @@ export default function Options() {
             <h2 className='text-lg font-semibold'>Introduksjon til Programmering</h2>
             <p className='text-lg'>Info132 - Høst 2021</p>
             <ul role='list' className='card__bullets'>  
+              <li className='leading-8'>Med forklaringer på slutten</li>
               <li className='leading-8'>60 Spørsmål</li>
             </ul>
             <a onClick={() => startExam('info132h21')} className='cta'>Start</a>

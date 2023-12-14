@@ -18,14 +18,13 @@ const customStyle = {
 function Result({ userAnswers }) {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [explanationVisible, setExplanationVisible] = useState(null);
   const { examId } = useParams();
-  console.log("examId:", examId);
+  
 
   useEffect(() => {
     const fetchExams = async () => {
-      console.log("Fetching exams with examId:", examId)
       const fetchedQuestions = await getExams(examId);
-      console.log("fetchedQuestions:", fetchedQuestions)
       setQuestions(fetchedQuestions);
       setLoading(false);
     };
@@ -42,10 +41,7 @@ function Result({ userAnswers }) {
   const sortedQuestions = [...questions].sort((a, b) => a.id - b.id);
 
   // Calculate score
-  // Calculate score
   const score = sortedUserAnswers.filter((answer, index) => {
-    console.log("User's answer:", answer.answer);
-    console.log("Correct answer:", sortedQuestions[index].answer);
     return answer.answer === sortedQuestions[index].answer;
   }).length;
 
@@ -64,6 +60,18 @@ function Result({ userAnswers }) {
           <p className={`font-bold tracking-wider ${sortedUserAnswers[index].answer === question.answer ? 'text-green-500' : 'text-red-500'}`}>
             {sortedUserAnswers[index].answer === question.answer ? 'Riktig' : 'Feil'}
           </p>
+          {question.explanation && (
+            <div className="text-center" onClick={() => setExplanationVisible(explanationVisible === index ? null : index)}>
+              Klikk her for forklaring
+            </div>
+          )}
+          {explanationVisible === index && question.explanation && (
+            <div className="w-full max-w-2xl whitespace-normal mt-4 border-t border-indigo-500">
+              <SyntaxHighlighter language="python" wrapLongLines={true} style={darcula}>
+                {question.explanation}
+              </SyntaxHighlighter>
+            </div>
+          )}
         </div>
       ))}
     </div>
