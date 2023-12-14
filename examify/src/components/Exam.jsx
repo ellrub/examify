@@ -57,7 +57,6 @@ function Exam({ setUserAnswers }) {
   // Fetch exams from Firestore and shuffle the questions when the component mounts
   useEffect(() => {
     getExams(examId).then((fetchedExams) => {
-      console.log(fetchedExams);
       setExams(fetchedExams);
       setAnswers(Array(fetchedExams.length).fill(null));
   
