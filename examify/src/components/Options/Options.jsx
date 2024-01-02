@@ -84,7 +84,7 @@ export default function Options() {
               <li className='leading-8'>Med forklaringer på slutten</li>
               <li className='leading-8'>60 Spørsmål</li>
             </ul>
-            <a onClick={() => startExam('info132h21')} className='cta'>Start</a>
+            <a onClick={() => startExam('info132h21')} className='cursor-pointer cta'>Start</a>
           </div>
 
           <div className='card'>
@@ -93,7 +93,7 @@ export default function Options() {
             <ul role='list' className='card__bullets'>
               <li className='leading-8'>60 Spørsmål</li>
             </ul>
-            <a onClick={() => startExam('info132h20')} className='cta'>Start</a>
+            <a onClick={() => startExam('info132h20')} className='cursor-pointer cta'>Start</a>
           </div>
 
         </div>
